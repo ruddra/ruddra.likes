@@ -1,7 +1,7 @@
 comments:
   allowedFields: ["name", "email", "website", "comment", "reply_to", "avatar"]
   branch: master
-  commitMessage: "New comment in {options.slug}"
+  commitMessage: "New like` in {options.slug}"
   filename: "comment-{@timestamp}"
   format: yaml
   generatedFields:
@@ -12,13 +12,9 @@ comments:
   moderation: false
   path: "comments/{options.slug}"
   notifications:
-    enabled: true
+    enabled: false
   requiredFields: []
-  transforms:
-    email: md5
   name: "ruddra.com"
   allowedOrigins: ["localhost", "localhost:1313", "ruddra.com", "mg.ruddra.com"]
   akismet:
-    enabled: true
-    author: "Arnab Kumar Shil"
-    authorUrl: "https://ruddra.com"
+    enabled: false
