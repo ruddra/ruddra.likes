@@ -1,0 +1,4 @@
+_id: e9f0df50-8fd3-11ea-86dd-a167dbca15b1
+_parent: sample-ajax-get-post-request-in-django
+email: 'http://localhost:1313/posts/sample-ajax-get-post-request-in-django/'
+date: '2020-05-06T19:58:11.492Z'
