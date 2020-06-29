@@ -1,0 +1,26 @@
+name: Comments
+on:
+  schedule:
+    - cron: "59 23 * * *"
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v1
+
+      - name: Setup python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+          architecture: "x64"
+
+      - name: Install dependencies
+        run: pip install -r requirements.pip
+
+      - name: Run scheduled task
+        env:
+          REPO: ${{ secrets.REPO }}
+          PAT_USERNAME: ${{ secrets.PAT_USERNAME }}
+          TOKEN: ${{ secrets.TOKEN }}
+        run: python trigger_action.py
