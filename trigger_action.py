@@ -9,6 +9,7 @@ headcommit = repo.head.commit
 commit_date = time.gmtime(headcommit.committed_date)
 today = datetime.datetime.utcnow()
 if (commit_date.tm_year, commit_date.tm_mon, commit_date.tm_mday) == (today.year, today.month, today.day):
+    print('found commit')
     headers = {
         'Accept': 'application/vnd.github.everest-preview+json',
         'Content-Type': 'application/json',
@@ -26,3 +27,6 @@ if (commit_date.tm_year, commit_date.tm_mon, commit_date.tm_mday) == (today.year
             TOKEN
         )
     )
+    print(response.status_code, response.content)
+else:
+    print('No commit')
