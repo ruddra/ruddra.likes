@@ -2,6 +2,9 @@ name: Comments
 on:
   schedule:
     - cron: "59 23 * * *"
+  push:
+    branches:
+      - master
 jobs:
   deploy:
     runs-on: ubuntu-18.04
