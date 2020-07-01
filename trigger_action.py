@@ -8,6 +8,8 @@ repo = Repo('.')
 headcommit = repo.head.commit
 commit_date = time.gmtime(headcommit.committed_date)
 today = datetime.datetime.utcnow()
+print(commit_date)
+print(today)
 if (commit_date.tm_year, commit_date.tm_mon, commit_date.tm_mday) == (today.year, today.month, today.day):
     print('found commit')
     headers = {
